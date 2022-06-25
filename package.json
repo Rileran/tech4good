@@ -13,6 +13,7 @@
 	"dependencies": {
 		"@remotion/cli": "^3.0.0",
 		"@remotion/eslint-config": "^3.0.0",
+		"dayjs": "^1.11.3",
 		"eslint": "^8.14.0",
 		"leaflet": "^1.8.0",
 		"prettier": "^2.2.1",

@@ -1,7 +1,9 @@
+import dayjs from 'dayjs';
 import {Composition} from 'remotion';
 import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
+import {Title} from './Title';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -40,6 +42,18 @@ export const RemotionVideo: React.FC = () => {
 				fps={30}
 				width={1920}
 				height={1200}
+			/>
+			<Composition
+				id="Title"
+				component={Title}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					date: dayjs(),
+					city: 'Rouen',
+				}}
 			/>
 		</>
 	);
