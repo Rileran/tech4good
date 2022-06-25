@@ -64,6 +64,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1200}
 				defaultProps={{
+					weather: 'Rain',
 					date,
 					score: 6,
 				}}
@@ -115,6 +116,7 @@ export const RemotionVideo: React.FC = () => {
 						},
 					],
 					score: 1,
+					stations: null,
 				}}
 			/>
 			<Composition

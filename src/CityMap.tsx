@@ -2,11 +2,12 @@ import 'leaflet/dist/leaflet.css';
 import {MapContainer, MapContainerProps, TileLayer} from 'react-leaflet';
 import {useCurrentFrame} from 'remotion';
 import {Wind} from './animations/Wind';
+import {colors} from './colors';
 import {LegendBar} from './components/LegendBar';
 import {Station, StationProps} from './components/Station';
 
 export type CityMapProps = Pick<MapContainerProps, 'center'> & {
-	stations: Array<Pick<StationProps, 'radius' | 'color' | 'center'>>;
+	stations: any;
 };
 
 export const CityMap: React.FC<CityMapProps> = ({stations, center}) => {
@@ -25,14 +26,16 @@ export const CityMap: React.FC<CityMapProps> = ({stations, center}) => {
 					scrollWheelZoom={false}
 				>
 					<TileLayer url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png" />
-					{stations.map(({center, radius, color}) => (
-						<Station
-							key={center.toString()}
-							center={center}
-							color={color}
-							radius={radius}
-						/>
-					))}
+					{stations.map(({center, radius, atmo}) => {
+						return (
+							<Station
+								key={center.toString()}
+								center={center}
+								color={colors[Object.keys(colors)[Math.round(atmo) - 1]]}
+								radius={radius}
+							/>
+						);
+					})}
 				</MapContainer>
 			</div>
 		</>

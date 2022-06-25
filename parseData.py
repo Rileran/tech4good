@@ -4,6 +4,7 @@ import sys
 import json
 import csv
 import geopy.distance
+import statistics
 
 OPEN_WEAHTER_MAP_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather"
 OPEN_WEAHTER_MAP_API_KEY = "3ca11b63c2ad4dc9fa4e0fc32d8708ae"
@@ -33,7 +34,22 @@ weather = requests.get(OPEN_WEAHTER_MAP_ENDPOINT, params=weather_params).json()
 
 print(weather["weather"][0]["main"])
 
-data = {"center": {"lat": lat, "lon": lon}, "weather": weather["weather"][0]["main"], "stations": [{"center":{"lat": station[0][16], "lon": station[0][15]}, "color": station[0][4], "radius": 40} for station in near_stations.values()]}
+data = {
+  "center": {"lat": lat, "lon": lon}, 
+  "weather": weather["weather"][0]["main"], 
+  "stations": [
+      {
+        "center": {"lat": station[0][16], "lon": station[0][15]},
+        "atmo": statistics.mean(map(lambda x: int(x[2]), station)),
+        "no2": statistics.mean(map(lambda x: int(x[10]), station)),
+        "so2": statistics.mean(map(lambda x: int(x[11]), station)),
+        "o3": statistics.mean(map(lambda x: int(x[12]), station)),
+        "pm10": statistics.mean(map(lambda x: int(x[13]), station)),
+        "pm25": statistics.mean(map(lambda x: int(x[14]), station)),
+        "radius": 40
+      } for station in near_stations.values()
+    ]
+  }
 
 with open("data.json", "w+") as f:
   json.dump(data, f)
