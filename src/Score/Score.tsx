@@ -9,15 +9,16 @@ import {Wind} from '../animations/Wind';
 export type ScoreProps = {
 	date: Dayjs;
 	score: number;
+	weather: string;
 };
 
-export const Score = ({date, score}) => {
+export const Score = ({date, score, weather}) => {
 	const label = Object.keys(colors)[score - 1];
 	const color = colors[label];
 	const frame = useCurrentFrame();
 
 	let Animation = Sun;
-	if (score > 3) {
+	if (weather === 'Rain') {
 		Animation = Rain;
 	}
 
@@ -27,9 +28,12 @@ export const Score = ({date, score}) => {
 			<Animation/>
 			<div className="scoreDate">Indice Atmo au <span>{date.format('dddd D MMMM')}</span></div>
 			<div style={{color}} className="scoreScore">
-				{score}<span className='scoreOutOf6'>/ 6</span>
+				{score}
+				<span className="scoreOutOf6">/ 6</span>
 			</div>
-			<div style={{color}} className="scoreLabel">{label}</div>
+			<div style={{color}} className="scoreLabel">
+				{label}
+			</div>
 		</div>
 	);
 };

@@ -1,9 +1,7 @@
 import {CircleMarker, CircleMarkerProps} from 'react-leaflet';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export type StationProps = CircleMarkerProps & {
-	radius: number;
-};
+export type StationProps = any;
 
 export const Station: React.FC<StationProps> = ({radius, ...rest}) => {
 	const frame = useCurrentFrame();
