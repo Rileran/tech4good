@@ -2,7 +2,6 @@ import dayjs from 'dayjs';
 import {Sequence} from 'remotion';
 import { Advice } from './Advice/Advice';
 import { Aurevoir } from './Aurevoir/Aurevoir';
-import {Wind} from './animations/Wind';
 import {CityMap} from './CityMap';
 import { Details } from './Details/Details';
 import {Score} from './Score/Score';
@@ -30,29 +29,34 @@ const fakeData = [
 
 const details = [
 	{
-		title: 'Monoxyde d\'azote',
-		cause: '(véhicules, centrales thermiques, chauffages, ...)',
-		quantity: '1micrometre'
+		title: 'Monoxyde d\'azote (NO2)',
+		cause: 'Véhicules, centrales thermiques, chauffages',
+		quantity: '5',
+		objectif: '25'
 	},
 	{
-		title: 'Ozone',
-		cause: '(aérosols, dissolvants, climatisation, réfrégirateur, ...)',
-		quantity: '2secres'
+		title: 'Ozone (O3)',
+		cause: 'Aérosols, dissolvants, climatisation, réfrégirateur',
+		quantity: '105',
+		objectif: '100'
 	},
 	{
-		title: 'Dioxyde de souffre',
-		cause: '(combustion de charbon, pétrole, gaz de souffre, ...)',
-		quantity: '2 kilos par mcube'
+		title: 'Dioxyde de souffre (SO2)',
+		cause: 'Combustion de charbon, pétrole, gaz de souffre',
+		quantity: '20',
+		objectif: '40'
 	},
 	{
 		title: 'Particules fines 10μm (PM10)',
-		cause: '(poussière de chantier, engrais, usure de pneus, ...)',
-		quantity: 'fion'
+		cause: 'Poussière de chantier, engrais, usure de pneus',
+		quantity: '30',
+		objectif: '45'
 	},
 	{
 		title: 'Particules fines 2,5μm (PM2.5)',
-		cause: '(moteurs diesels, suies, transformation chimique des gaz nitrates et sulfates, ...)',
-		quantity: 'bidule'
+		cause: 'Moteurs diesels, suies, transformation chimique des gaz polluants',
+		quantity: '10',
+		objectif: '15'
 	}
 ]
 

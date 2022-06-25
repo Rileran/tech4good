@@ -1,21 +1,59 @@
-.header {
+.detailsHeader {
   display: flex;
   flex-direction: row;
-  font-size: 50px;
+  font-size: 40px;
   align-items: center;
-  justify-content: space-between;
 
-  .title {
-    margin-right: 500px;
+  .detailsTitle {
+    flex-grow: 1;
   }
 }
 
-.cause {
-  font-size: 35px;
+.detailsCause {
+  font-size: 30px;
   margin-bottom: 50px;
 }
 
-.detail {
+.detailsDetails {
   width: 100%;
-  padding: 0 200px;
+  padding: 0 100px;
+}
+
+.detailsObjectif {
+  font-size: 40px;
+  text-align: right;
+  color: gray;
+  width: 10%;
+}
+
+.detailsScoreIsExplainedBy {
+  font-size: 100px;
+  margin-bottom: 50px;
+}
+
+.detailsSeuil {
+  text-align: right;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.detailsLegends {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 200px;
+  align-items: baseline;
+
+  .detailsSeuil:not(:last-child) {
+    margin-right: 80px;
+  }
+}
+
+.detailsGray {
+  color: gray;
+}
+
+.detailsSmall {
+  font-size: 30px;
 }

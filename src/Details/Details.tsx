@@ -4,7 +4,8 @@ export type DetailsProps = {
 	details: Array<{
     title: string,
     cause: string,
-    quantity: string
+    quantity: number,
+    objectif: number
   }>,
   score: number
 };
@@ -12,14 +13,20 @@ export type DetailsProps = {
 export const Details = ({details, score}) => {
 	return (
 		<div className="container">
-			<div className='titre'>Le score de {score} s&apos;explique par...</div>
+			<div className='detailsScoreIsExplainedBy'>Ce score de {score} / 6 s&apos;explique par...</div>
+      <div className='detailsLegends'>
+        <div className='detailsSeuil detailsGray detailsSmall'>μg/m3</div>
+        <div className='detailsSeuil'>Valeur</div>
+        <div className='detailsSeuil detailsGray'>Seuil</div>
+      </div>
       {details.map((detail) => (
-        <div className="detail">
-          <div className='header'>
-            <div className='title'>{detail.title}</div>
-            <div>{detail.quantity}</div>
+        <div className="detailsDetails">
+          <div className='detailsHeader'>
+            <div className='detailsTitle'>{detail.title}</div>
+            <div style={detail.quantity > detail.objectif ? {color: 'red', fontWeight: 'bold'} : {}}>{detail.quantity}</div>
+            <div className='detailsObjectif'>{detail.objectif}</div>
           </div>
-          <div className='cause'>{detail.cause}</div>
+          <div className='detailsCause'>{detail.cause}</div>
         </div>
 			))}
 		</div>

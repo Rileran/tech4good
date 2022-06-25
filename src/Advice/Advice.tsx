@@ -7,8 +7,8 @@ export type AdviceProps = {
 export const Advice = ({advice}) => {
 	return (
 		<div className="container">
-			<div className='titre'>Le conseil du jour</div>
-      <div className='advice'>{advice}</div>
+			<div className='adviceTitle'>Le conseil du jour</div>
+      <div className='adviceAdvice'>{advice}</div>
 		</div>
 	);
 };
