@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import {Composition} from 'remotion';
+import { Advice } from './Advice/Advice';
 import { Wind } from './animations/Wind';
 import {Atmo} from './Atmo';
 import {CityMap} from './CityMap';
@@ -108,6 +109,17 @@ export const RemotionVideo: React.FC = () => {
 					date,
 					score: 6,
 					label: 'C chaud'
+				}}
+			/>
+			<Composition
+				id="Advice"
+				component={Advice}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					advice: 'Arrêtez les bagnoles'
 				}}
 			/>
 		</>
