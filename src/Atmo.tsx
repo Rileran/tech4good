@@ -31,27 +31,27 @@ const fakeData = [
 const details = [
 	{
 		title: 'Monoxyde d\'azote',
-		cause: '(véhicules, centrales thermiques, chauffages, ...)',
+		cause: 'Véhicules, centrales thermiques, chauffages',
 		quantity: '1micrometre'
 	},
 	{
 		title: 'Ozone',
-		cause: '(aérosols, dissolvants, climatisation, réfrégirateur, ...)',
+		cause: 'Aérosols, dissolvants, climatisation, réfrégirateur',
 		quantity: '2secres'
 	},
 	{
 		title: 'Dioxyde de souffre',
-		cause: '(combustion de charbon, pétrole, gaz de souffre, ...)',
+		cause: 'Combustion de charbon, pétrole, gaz de souffre',
 		quantity: '2 kilos par mcube'
 	},
 	{
 		title: 'Particules fines 10μm (PM10)',
-		cause: '(poussière de chantier, engrais, usure de pneus, ...)',
+		cause: 'Poussière de chantier, engrais, usure de pneus',
 		quantity: 'fion'
 	},
 	{
 		title: 'Particules fines 2,5μm (PM2.5)',
-		cause: '(moteurs diesels, suies, transformation chimique des gaz nitrates et sulfates, ...)',
+		cause: 'Moteurs diesels, suies, transformation chimique des gaz polluants',
 		quantity: 'bidule'
 	}
 ]

@@ -12,14 +12,14 @@ export type DetailsProps = {
 export const Details = ({details, score}) => {
 	return (
 		<div className="container">
-			<div className='titre'>Le score de {score} s&apos;explique par...</div>
+			<div className='detailsScoreIsExplainedBy'>Ce score de {score} / 6 s&apos;explique par...</div>
       {details.map((detail) => (
-        <div className="detail">
-          <div className='header'>
-            <div className='title'>{detail.title}</div>
+        <div className="detailsDetails">
+          <div className='detailsHeader'>
+            <div className='detailsTitle'>{detail.title}</div>
             <div>{detail.quantity}</div>
           </div>
-          <div className='cause'>{detail.cause}</div>
+          <div className='detailsCause'>{detail.cause}</div>
         </div>
 			))}
 		</div>

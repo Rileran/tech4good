@@ -13,7 +13,7 @@ export type TitleProps = {
 export const Title = ({date, city}) => {
 	return (
 		<div className='container'>
-			<div className='bilanAtmo'>Bilan ATMO</div>
+			<div className='bilanAtmo'>Bilan Atmo</div>
 			<div className='date'>{date.format('dddd D MMMM')}</div>
 			<div className='city'>à {city}</div>
 			<div className="images">

@@ -9,9 +9,9 @@ export const Rain = () => {
 		<Lottie
 			style={{
 				position: 'absolute',
-				top: '0px',
-				left: '0px',
-				height: 'full',
+				top: '400px',
+				left: '150px',
+				height: '350px',
 			}}
 			className="absolute top-0 left-0 h-full"
 			autoplay={false}
