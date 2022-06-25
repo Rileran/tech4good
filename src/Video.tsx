@@ -3,12 +3,15 @@ import {Composition} from 'remotion';
 import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
+import { Score } from './Score/Score';
 import {Title} from './Title/Title';
 import {Wind} from './Wind';
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionVideo: React.FC = () => {
+	const date = dayjs();
+
 	return (
 		<>
 			<Composition
@@ -52,7 +55,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1200}
 				defaultProps={{
-					date: dayjs(),
+					date,
 					city: 'Rouen',
 				}}
 			/>
@@ -63,6 +66,19 @@ export const RemotionVideo: React.FC = () => {
 				fps={30}
 				width={1920}
 				height={1200}
+			/>
+			<Composition
+				id="Score"
+				component={Score}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					date,
+					score: 6,
+					label: 'C chaud'
+				}}
 			/>
 		</>
 	);

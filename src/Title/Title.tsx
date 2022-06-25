@@ -15,9 +15,9 @@ export const Title = ({date, city}) => {
 			<div className='bilanAtmo'>Bilan ATMO</div>
 			<div className='date'>{date.format('dddd D MMMM')}</div>
 			<div className='city'>à {city}</div>
-			<div className='images'>
-				<Img className='logoAtmos' src={AtomNormandiePartenair}></Img>
-				<Img className='logoMetropole' src={Metropole}></Img>
+			<div className="images">
+				<Img src={AtomNormandiePartenair} />
+				<Img src={Metropole} />
 			</div>
 		</div>
 	);
