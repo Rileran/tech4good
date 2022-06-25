@@ -1,3 +1,4 @@
+import {Audio} from 'remotion';
 import dayjs from 'dayjs';
 import {Sequence} from 'remotion';
 import {Advice} from './Advice/Advice';
@@ -6,8 +7,7 @@ import {CityMap} from './CityMap';
 import {Details} from './Details/Details';
 import {Score} from './Score/Score';
 import {Title} from './Title/Title';
-
-const score = 4;
+import audio from './audio.mp3';
 
 const details = [
 	{
@@ -49,6 +49,7 @@ export const Atmo = ({center, weather, stations}) => {
 
 	return (
 		<>
+			<Audio src={audio} startFrom={0} endAt={501} />
 			<Sequence from={0} durationInFrames={50}>
 				<Title date={dayjs()} city="Rouen" />
 			</Sequence>
@@ -62,7 +63,7 @@ export const Atmo = ({center, weather, stations}) => {
 				<Details details={details} score={score} stations={stations} />
 			</Sequence>
 			<Sequence from={351} durationInFrames={100}>
-				<Advice/>
+				<Advice />
 			</Sequence>
 			<Sequence from={451} durationInFrames={50}>
 				<Aurevoir />
