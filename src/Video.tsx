@@ -8,6 +8,24 @@ import {Wind} from './Wind';
 
 // Each <Composition> is an entry in the sidebar!
 
+const fakeData = [
+	{
+		center: {lat: 49.44191817384622, lng: 1.0922555780313823},
+		color: 'red',
+		radius: 20,
+	},
+	{
+		center: {lat: 49.45291817384622, lng: 1.192255578031382},
+		color: 'blue',
+		radius: 40,
+	},
+	{
+		center: {lat: 49.40291817384622, lng: 1.142255578031382},
+		color: 'green',
+		radius: 50,
+	},
+];
+
 export const RemotionVideo: React.FC = () => {
 	return (
 		<>
@@ -43,6 +61,9 @@ export const RemotionVideo: React.FC = () => {
 				fps={30}
 				width={1920}
 				height={1200}
+				defaultProps={{
+					stations: fakeData,
+				}}
 			/>
 			<Composition
 				id="Title"
