@@ -1,13 +1,14 @@
 import dayjs from 'dayjs';
 import {Composition} from 'remotion';
-import { Advice } from './Advice/Advice';
-import { Wind } from './animations/Wind';
+import {Advice} from './Advice/Advice';
+import {Wind} from './animations/Wind';
 import {Atmo} from './Atmo';
-import { Aurevoir } from './Aurevoir/Aurevoir';
+import {Aurevoir} from './Aurevoir/Aurevoir';
 import {CityMap} from './CityMap';
-import { Details } from './Details/Details';
+import {Details} from './Details/Details';
 import {Score} from './Score/Score';
 import {Title} from './Title/Title';
+import data from '../data.json';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -38,34 +39,35 @@ export const RemotionVideo: React.FC = () => {
 				id="Atmo"
 				component={Atmo}
 				durationInFrames={501}
+				defaultProps={data}
 				fps={30}
 				width={1920}
 				height={1200}
 			/>
-				<Composition
-					id="Title"
-					component={Title}
-					durationInFrames={150}
-					fps={30}
-					width={1920}
-					height={1200}
-					defaultProps={{
-						date,
-						city: 'Rouen',
-					}}
-				/>
-				<Composition
-					id="Score"
-					component={Score}
-					durationInFrames={150}
-					fps={30}
-					width={1920}
-					height={1200}
-					defaultProps={{
-						date,
-						score: 6,
-					}}
-				/>
+			<Composition
+				id="Title"
+				component={Title}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					date,
+					city: 'Rouen',
+				}}
+			/>
+			<Composition
+				id="Score"
+				component={Score}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					date,
+					score: 6,
+				}}
+			/>
 			<Composition
 				id="CityMap"
 				component={CityMap}
@@ -77,52 +79,55 @@ export const RemotionVideo: React.FC = () => {
 					stations: fakeData,
 				}}
 			/>
-				<Composition
-					id="Details"
-					component={Details}
-					durationInFrames={150}
-					fps={30}
-					width={1920}
-					height={1200}
-					defaultProps={{details: [{
-						title: 'Dioxyde de carbone',
-						cause: '(voitures, agriculture, ...)',
-						quantity: '23 mg/l'
-					},
-					{
-						title: 'Dioxyde de carbone',
-						cause: '(voitures, agriculture, ...)',
-						quantity: '23 mg/l'
-					},
-					{
-						title: 'Dioxyde de carbone',
-						cause: '(voitures, agriculture, ...)',
-						quantity: '23 mg/l'
-					},
-					{
-						title: 'Dioxyde de carbone',
-						cause: '(voitures, agriculture, ...)',
-						quantity: '23 mg/l'
-					},
-					{
-						title: 'Dioxyde de carbone',
-						cause: '(voitures, agriculture, ...)',
-						quantity: '23 mg/l'
-					}
-				],
-				score: 1}}
-				/>
-				<Composition
-					id="Advice"
-					component={Advice}
-					durationInFrames={150}
-					fps={30}
-					width={1920}
-					height={1200}
-					defaultProps={{
-						advice: 'Arrêtez les bagnoles'
-					}}
-				/>
+			<Composition
+				id="Details"
+				component={Details}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					details: [
+						{
+							title: 'Dioxyde de carbone',
+							cause: '(voitures, agriculture, ...)',
+							quantity: '23 mg/l',
+						},
+						{
+							title: 'Dioxyde de carbone',
+							cause: '(voitures, agriculture, ...)',
+							quantity: '23 mg/l',
+						},
+						{
+							title: 'Dioxyde de carbone',
+							cause: '(voitures, agriculture, ...)',
+							quantity: '23 mg/l',
+						},
+						{
+							title: 'Dioxyde de carbone',
+							cause: '(voitures, agriculture, ...)',
+							quantity: '23 mg/l',
+						},
+						{
+							title: 'Dioxyde de carbone',
+							cause: '(voitures, agriculture, ...)',
+							quantity: '23 mg/l',
+						},
+					],
+					score: 1,
+				}}
+			/>
+			<Composition
+				id="Advice"
+				component={Advice}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					advice: 'Arrêtez les bagnoles',
+				}}
+			/>
 			<Composition
 				id="Wind"
 				component={Wind}

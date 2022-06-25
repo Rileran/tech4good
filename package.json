@@ -4,7 +4,8 @@
 	"description": "My Remotion video",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
-		"build": "remotion render src/index.tsx Atmo out/video.mp4",
+		"prebuild": "python getData.py && python parseData.py 49.42364364472353 1.0889931971585671",
+		"build": "remotion render src/index.tsx Atmo out/video.mp4 --props=data.json",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},

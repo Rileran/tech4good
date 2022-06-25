@@ -1,17 +1,15 @@
 import 'leaflet/dist/leaflet.css';
-import {MapContainer, TileLayer} from 'react-leaflet';
+import {MapContainer, MapContainerProps, TileLayer} from 'react-leaflet';
 import {useCurrentFrame} from 'remotion';
 import {Wind} from './animations/Wind';
 import {LegendBar} from './components/LegendBar';
 import {Station, StationProps} from './components/Station';
 
-export type CityMapProps = {
+export type CityMapProps = Pick<MapContainerProps, 'center'> & {
 	stations: Array<Pick<StationProps, 'radius' | 'color' | 'center'>>;
 };
 
-export const CityMap: React.FC<CityMapProps> = ({stations}) => {
-	const position = {lat: 49.44191817384622, lng: 1.0922555780313823};
-
+export const CityMap: React.FC<CityMapProps> = ({stations, center}) => {
 	const frame = useCurrentFrame();
 
 	return (
@@ -22,8 +20,8 @@ export const CityMap: React.FC<CityMapProps> = ({stations}) => {
 				<MapContainer
 					zoomControl={false}
 					style={{height: 1200, width: 1920}}
-					center={position}
-					zoom={13}
+					center={center}
+					zoom={14}
 					scrollWheelZoom={false}
 				>
 					<TileLayer url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png" />
