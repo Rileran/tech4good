@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
 import {Composition} from 'remotion';
+import {Atmo} from './Atmo';
 import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
 import {Title} from './Title/Title';
-import {Wind} from './Wind';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -30,6 +30,14 @@ export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
+				id="Atmo"
+				component={Atmo}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+			/>
+			<Composition
 				// You can take the "id" to render a video:
 				// npx remotion render src/index.tsx <id> out/video.mp4
 				id="HelloWorld"
@@ -37,7 +45,7 @@ export const RemotionVideo: React.FC = () => {
 				durationInFrames={150}
 				fps={30}
 				width={1920}
-				height={1080}
+				height={1200}
 				// You can override these props for each render:
 				// https://www.remotion.dev/docs/parametrized-rendering
 				defaultProps={{
@@ -52,7 +60,7 @@ export const RemotionVideo: React.FC = () => {
 				durationInFrames={150}
 				fps={30}
 				width={1920}
-				height={1080}
+				height={1200}
 			/>
 			<Composition
 				id="CityMap"
@@ -76,14 +84,6 @@ export const RemotionVideo: React.FC = () => {
 					date: dayjs(),
 					city: 'Rouen',
 				}}
-			/>
-			<Composition
-				id="Wind"
-				component={Wind}
-				durationInFrames={150}
-				fps={30}
-				width={1920}
-				height={1200}
 			/>
 		</>
 	);
