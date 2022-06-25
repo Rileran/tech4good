@@ -8,6 +8,12 @@ export const Wind = () => {
 	return (
 		<Lottie
 			className="absolute top-0 left-0 h-full"
+			style={{
+				position: 'absolute',
+				top: '0px',
+				left: '0px',
+				height: 'full',
+			}}
 			autoplay={false}
 			initialSegment={[frame, frame]}
 			animationData={animation}

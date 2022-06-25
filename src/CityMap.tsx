@@ -11,7 +11,7 @@ export const CityMap: React.FC<CityMapProps> = ({stations}) => {
 	const position = {lat: 49.44191817384622, lng: 1.0922555780313823};
 
 	return (
-		<div className="relative">
+		<div style={{position: 'relative'}} className="relative">
 			<LegendBar />
 			<MapContainer
 				zoomControl={false}

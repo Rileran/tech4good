@@ -15,9 +15,22 @@ export const LegendBar = () => {
 	});
 
 	return (
-		<div style={{zIndex: 500, height}} className="absolute flex flex-col w-16">
+		<div
+			style={{
+				zIndex: 500,
+				height,
+				position: 'absolute',
+				display: 'flex',
+				flexDirection: 'column',
+				width: '80px',
+			}}
+			className="absolute flex flex-col w-16"
+		>
 			{Object.entries(colors).map(([_, color]) => (
-				<div style={{backgroundColor: color}} className=" w-full flex-grow" />
+				<div
+					style={{backgroundColor: color, width: 'full', flexGrow: '1'}}
+					className=" w-full flex-grow"
+				/>
 			))}
 		</div>
 	);
