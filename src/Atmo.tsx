@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import {Sequence} from 'remotion';
 import { Advice } from './Advice/Advice';
 import { Aurevoir } from './Aurevoir/Aurevoir';
+import {Wind} from './animations/Wind';
 import {CityMap} from './CityMap';
 import { Details } from './Details/Details';
 import {Score} from './Score/Score';
