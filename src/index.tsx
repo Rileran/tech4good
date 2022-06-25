@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/fr';
 import {registerRoot} from 'remotion';
 import {RemotionVideo} from './Video';
+import './app.scss';
 
 dayjs.locale('fr');
 registerRoot(RemotionVideo);

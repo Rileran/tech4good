@@ -1,9 +1,11 @@
 import dayjs from 'dayjs';
 import {Composition} from 'remotion';
+import { Wind } from './animations/Wind';
 import {Atmo} from './Atmo';
 import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
+import { Score } from './Score/Score';
 import {Title} from './Title/Title';
 
 // Each <Composition> is an entry in the sidebar!
@@ -27,6 +29,8 @@ const fakeData = [
 ];
 
 export const RemotionVideo: React.FC = () => {
+	const date = dayjs();
+
 	return (
 		<>
 			<Composition
@@ -81,8 +85,29 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1200}
 				defaultProps={{
-					date: dayjs(),
+					date,
 					city: 'Rouen',
+				}}
+			/>
+			<Composition
+				id="Wind"
+				component={Wind}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+			/>
+			<Composition
+				id="Score"
+				component={Score}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{
+					date,
+					score: 6,
+					label: 'C chaud'
 				}}
 			/>
 		</>
