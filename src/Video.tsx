@@ -3,7 +3,9 @@ import {Composition} from 'remotion';
 import { Advice } from './Advice/Advice';
 import { Wind } from './animations/Wind';
 import {Atmo} from './Atmo';
+import { Aurevoir } from './Aurevoir/Aurevoir';
 import {CityMap} from './CityMap';
+import { Details } from './Details/Details';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
 import { Score } from './Score/Score';
@@ -121,6 +123,49 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					advice: 'Arrêtez les bagnoles'
 				}}
+			/>
+			<Composition
+				id="Details"
+				component={Details}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
+				defaultProps={{details: [{
+					title: 'Dioxyde de carbone',
+					cause: '(voitures, agriculture, ...)',
+					quantity: '23 mg/l'
+				},
+				{
+					title: 'Dioxyde de carbone',
+					cause: '(voitures, agriculture, ...)',
+					quantity: '23 mg/l'
+				},
+				{
+					title: 'Dioxyde de carbone',
+					cause: '(voitures, agriculture, ...)',
+					quantity: '23 mg/l'
+				},
+				{
+					title: 'Dioxyde de carbone',
+					cause: '(voitures, agriculture, ...)',
+					quantity: '23 mg/l'
+				},
+				{
+					title: 'Dioxyde de carbone',
+					cause: '(voitures, agriculture, ...)',
+					quantity: '23 mg/l'
+				}
+			],
+			score: 1}}
+			/>
+			<Composition
+				id="Aurevoir"
+				component={Aurevoir}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
 			/>
 		</>
 	);
