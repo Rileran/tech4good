@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import {Sequence} from 'remotion';
+import {Wind} from './animations/Wind';
 import {CityMap} from './CityMap';
 import {Score} from './Score/Score';
 import {Title} from './Title/Title';
@@ -25,13 +26,13 @@ const fakeData = [
 export const Atmo = () => {
 	return (
 		<>
-			<Sequence from={0} durationInFrames={20}>
+			<Sequence from={0} durationInFrames={60}>
 				<Title date={dayjs()} city="Rouen" />
 			</Sequence>
-			<Sequence from={19} durationInFrames={40}>
-				<Score score={4} date={dayjs()} />
+			<Sequence from={60} durationInFrames={60}>
+				<Score score={3} date={dayjs()} />
 			</Sequence>
-			<Sequence from={58} durationInFrames={40}>
+			<Sequence from={120} durationInFrames={120}>
 				<CityMap stations={fakeData} />
 			</Sequence>
 		</>

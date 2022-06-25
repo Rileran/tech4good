@@ -6,17 +6,18 @@ export const Wind = () => {
 	const frame = useCurrentFrame();
 
 	return (
-		<Lottie
-			className="absolute top-0 left-0 h-full"
-			style={{
-				position: 'absolute',
-				top: '0px',
-				left: '0px',
-				height: 'full',
-			}}
-			autoplay={false}
-			initialSegment={[frame, frame]}
-			animationData={animation}
-		/>
+		<div style={{height: 'full', width: 'full', zIndex: 1000}}>
+			<Lottie
+				style={{
+					position: 'absolute',
+					top: '20%',
+					left: '0px',
+					height: '800px',
+				}}
+				autoplay={false}
+				initialSegment={[frame, frame]}
+				animationData={animation}
+			/>
+		</div>
 	);
 };

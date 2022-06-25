@@ -4,5 +4,5 @@ export const colors = {
 	Dégradé: '#f0e641',
 	Mauvais: '#f84e4f',
 	'Très mauvais': '#972732',
-	'Extremement mauvais': '#894281',
+	'Extrêmement mauvais': '#894281',
 };

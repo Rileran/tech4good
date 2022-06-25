@@ -2,7 +2,7 @@ import Lottie from 'lottie-react';
 import {useCurrentFrame} from 'remotion';
 import animation from '../lottie/sun.json';
 
-export const Wind = () => {
+export const Sun = () => {
 	const frame = useCurrentFrame();
 
 	return (

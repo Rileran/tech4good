@@ -36,7 +36,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="Atmo"
 				component={Atmo}
-				durationInFrames={150}
+				durationInFrames={240}
 				fps={30}
 				width={1920}
 				height={1200}
