@@ -1,4 +1,5 @@
 import {Composition} from 'remotion';
+import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
 
@@ -31,6 +32,14 @@ export const RemotionVideo: React.FC = () => {
 				fps={30}
 				width={1920}
 				height={1080}
+			/>
+			<Composition
+				id="CityMap"
+				component={CityMap}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
 			/>
 		</>
 	);
