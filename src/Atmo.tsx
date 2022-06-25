@@ -2,7 +2,6 @@ import dayjs from 'dayjs';
 import {Sequence} from 'remotion';
 import { Advice } from './Advice/Advice';
 import { Aurevoir } from './Aurevoir/Aurevoir';
-import {Wind} from './animations/Wind';
 import {CityMap} from './CityMap';
 import { Details } from './Details/Details';
 import {Score} from './Score/Score';
@@ -30,29 +29,34 @@ const fakeData = [
 
 const details = [
 	{
-		title: 'Monoxyde d\'azote',
+		title: 'Monoxyde d\'azote (NO2)',
 		cause: 'Véhicules, centrales thermiques, chauffages',
-		quantity: '1micrometre'
+		quantity: '5',
+		objectif: '25'
 	},
 	{
-		title: 'Ozone',
+		title: 'Ozone (O3)',
 		cause: 'Aérosols, dissolvants, climatisation, réfrégirateur',
-		quantity: '2secres'
+		quantity: '105',
+		objectif: '100'
 	},
 	{
-		title: 'Dioxyde de souffre',
+		title: 'Dioxyde de souffre (SO2)',
 		cause: 'Combustion de charbon, pétrole, gaz de souffre',
-		quantity: '2 kilos par mcube'
+		quantity: '20',
+		objectif: '40'
 	},
 	{
 		title: 'Particules fines 10μm (PM10)',
 		cause: 'Poussière de chantier, engrais, usure de pneus',
-		quantity: 'fion'
+		quantity: '30',
+		objectif: '45'
 	},
 	{
 		title: 'Particules fines 2,5μm (PM2.5)',
 		cause: 'Moteurs diesels, suies, transformation chimique des gaz polluants',
-		quantity: 'bidule'
+		quantity: '10',
+		objectif: '15'
 	}
 ]
 
