@@ -1,5 +1,6 @@
 .scoreDate {
   font-size: 100px;
+  text-transform: capitalize;
 }
 
 .scoreScore {
@@ -12,4 +13,10 @@
 
 .scoreOutOf6 {
   font-size: 100px;
+}
+
+.legendBarLibelles {
+  font-size: 30px;
+  transform: rotate(-90deg) translateX(-110%);
+  text-align: center;
 }

@@ -21,7 +21,7 @@ export const Score = ({date, score}) => {
 	return (
 		<div className="container">
 			<Animation/>
-			<div className="scoreDate">Indice Atmo au {date.format('dddd D MMMM')}</div>
+			<div className="scoreDate">Indice Atmo au <span>{date.format('dddd D MMMM')}</span></div>
 			<div style={{color}} className="scoreScore">
 				{score}<span className='scoreOutOf6'>/ 6</span>
 			</div>
