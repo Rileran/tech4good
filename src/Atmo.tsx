@@ -42,7 +42,7 @@ const details = [
 	},
 ];
 
-export const Atmo = ({center, weather, stations}) => {
+export const Atmo = ({ville, center, weather, stations}) => {
 	const score = stations
 		.map(({atmo}) => atmo)
 		.reduce((acc, red) => Math.max(acc, red));
@@ -51,7 +51,7 @@ export const Atmo = ({center, weather, stations}) => {
 		<>
 			<Audio src={audio} startFrom={0} endAt={501} />
 			<Sequence from={0} durationInFrames={50}>
-				<Title date={dayjs()} city="Rouen" />
+				<Title date={dayjs()} city={ville} />
 			</Sequence>
 			<Sequence from={51} durationInFrames={100}>
 				<Score weather={weather} score={score} date={dayjs()} />

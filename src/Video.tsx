@@ -53,7 +53,7 @@ export const RemotionVideo: React.FC = () => {
 				height={1200}
 				defaultProps={{
 					date,
-					city: 'Rouen',
+					city: process.env.CITY_NAME,
 				}}
 			/>
 			<Composition

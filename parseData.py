@@ -5,19 +5,21 @@ import json
 import csv
 import geopy.distance
 import statistics
+import os
 
 OPEN_WEAHTER_MAP_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather"
 OPEN_WEAHTER_MAP_API_KEY = "3ca11b63c2ad4dc9fa4e0fc32d8708ae"
 
 
-if len(sys.argv) != 3:
-  print("usage: python genData.py <lat> <long>")
-  sys.exit(0)
+# if len(sys.argv) != 3:
+#   print("usage: python genData.py <lat> <long>")
+#   sys.exit(0)
 
 with open("data.csv", "r") as f:
   lines = list(csv.reader(f, delimiter=","))[1:]
 
-lat, lon = map(float, sys.argv[1:])
+# lat, lon = map(float, sys.argv[1:])
+lat, lon = [os.environ["LAT"], os.environ["LONG"]]
 weather_params = {"lat": lat, "lon": lon, "appid": OPEN_WEAHTER_MAP_API_KEY}
 
 def is_near(coord_1, coord_2):
@@ -35,6 +37,7 @@ weather = requests.get(OPEN_WEAHTER_MAP_ENDPOINT, params=weather_params).json()
 print(weather["weather"][0]["main"])
 
 data = {
+  "ville": os.environ["CITY"],
   "center": {"lat": lat, "lon": lon}, 
   "weather": weather["weather"][0]["main"], 
   "stations": [
