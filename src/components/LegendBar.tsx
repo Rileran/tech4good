@@ -1,14 +1,6 @@
 import {useVideoConfig} from 'remotion';
 import {spring, useCurrentFrame} from 'remotion';
-
-const colors = {
-	Bon: '#50f0e6',
-	Moyen: '#50ccaa',
-	Dégradé: '#f0e641',
-	Mauvais: '#f84e4f',
-	'Très mauvais': '#972732',
-	'Extremement mauvais': '#894281',
-};
+import {colors} from '../colors';
 
 export const LegendBar = () => {
 	const frame = useCurrentFrame();
@@ -23,9 +15,22 @@ export const LegendBar = () => {
 	});
 
 	return (
-		<div style={{zIndex: 500, height}} className="absolute flex flex-col w-16">
+		<div
+			style={{
+				zIndex: 500,
+				height,
+				position: 'absolute',
+				display: 'flex',
+				flexDirection: 'column',
+				width: '80px',
+			}}
+			className="absolute flex flex-col w-16"
+		>
 			{Object.entries(colors).map(([_, color]) => (
-				<div style={{backgroundColor: color}} className=" w-full flex-grow" />
+				<div
+					style={{backgroundColor: color, width: 'full', flexGrow: '1'}}
+					className=" w-full flex-grow"
+				/>
 			))}
 		</div>
 	);

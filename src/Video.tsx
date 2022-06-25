@@ -8,7 +8,7 @@ import {CityMap} from './CityMap';
 import { Details } from './Details/Details';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
-import { Score } from './Score/Score';
+import {Score} from './Score/Score';
 import {Title} from './Title/Title';
 
 // Each <Composition> is an entry in the sidebar!
@@ -110,7 +110,6 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					date,
 					score: 6,
-					label: 'C chaud'
 				}}
 			/>
 			<Composition
