@@ -3,7 +3,7 @@ import {Composition} from 'remotion';
 import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
-import {Title} from './Title';
+import {Title} from './Title/Title';
 import {Wind} from './Wind';
 
 // Each <Composition> is an entry in the sidebar!

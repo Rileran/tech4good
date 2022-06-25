@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.container {
+  height: 1200px;
+  width: 1920px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #D9DBBC;
+  font-family: 'Roboto', sans-serif;
+
+  .bilanAtmo {
+    font-size: 100px;
+    margin-bottom: 100px;
+  }
+
+  .date {
+    font-size: 150px;
+    text-transform: capitalize;
+    margin-bottom: 100px;
+  }
+
+  .city {
+    font-size: 100px;
+    margin-bottom: 100px;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      height: 200px;
+      margin: 0 100px;
+    }
+  }
+}
