@@ -4,6 +4,7 @@ import {CityMap} from './CityMap';
 import {HelloWorld} from './HelloWorld';
 import {Logo} from './HelloWorld/Logo';
 import {Title} from './Title';
+import {Wind} from './Wind';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -54,6 +55,14 @@ export const RemotionVideo: React.FC = () => {
 					date: dayjs(),
 					city: 'Rouen',
 				}}
+			/>
+			<Composition
+				id="Wind"
+				component={Wind}
+				durationInFrames={150}
+				fps={30}
+				width={1920}
+				height={1200}
 			/>
 		</>
 	);

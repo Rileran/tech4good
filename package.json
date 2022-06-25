@@ -4,7 +4,7 @@
 	"description": "My Remotion video",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
-		"build": "remotion render src/index.tsx HelloWorld out/video.mp4",
+		"build": "remotion render src/index.tsx Wind out/video.mp4",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},
@@ -16,6 +16,7 @@
 		"dayjs": "^1.11.3",
 		"eslint": "^8.14.0",
 		"leaflet": "^1.8.0",
+		"lottie-react": "^2.3.1",
 		"prettier": "^2.2.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
