@@ -1,8 +1,9 @@
 import {Dayjs} from 'dayjs';
 import './Title.scss';
 import {Img} from 'remotion';
-import AtomNormandiePartenair from './AtmoNormandiePartenair.png';
-import Metropole from './Metropole.png';
+import AtomNormandiePartenair from '../assets/AtmoNormandiePartenair.png';
+import Metropole from '../assets/Metropole.png';
+import Qualitair from '../assets/Qualitair.svg';
 
 export type TitleProps = {
 	date: Dayjs;
@@ -18,6 +19,7 @@ export const Title = ({date, city}) => {
 			<div className="images">
 				<Img src={AtomNormandiePartenair} />
 				<Img src={Metropole} />
+				<Img src={Qualitair} /> 
 			</div>
 		</div>
 	);

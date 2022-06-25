@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    margin-right: 500px;
+  }
+}
+
+.cause {
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+.detail {
+  width: 100%;
+  padding: 0 200px;
+}
