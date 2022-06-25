@@ -1,6 +1,6 @@
 import {Dayjs} from 'dayjs';
 import './Title.scss';
-import {Img} from "remotion";
+import {Img} from 'remotion';
 import AtomNormandiePartenair from './AtmoNormandiePartenair.png';
 import Metropole from './Metropole.png';
 

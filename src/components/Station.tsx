@@ -1,19 +1,21 @@
 import {CircleMarker, CircleMarkerProps} from 'react-leaflet';
-import {interpolate, useCurrentFrame} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 export type StationProps = CircleMarkerProps & {
-	minRadius: number;
-	maxRadius: number;
+	radius: number;
 };
 
-export const Station: React.FC<StationProps> = ({
-	minRadius,
-	maxRadius,
-	...rest
-}) => {
+export const Station: React.FC<StationProps> = ({radius, ...rest}) => {
 	const frame = useCurrentFrame();
+	const videoConfig = useVideoConfig();
 
-	const radius = interpolate(frame, [0, 150], [minRadius, maxRadius]);
+	const currentRadius = spring({
+		frame,
+		from: 0,
+		to: radius,
+		fps: videoConfig.fps,
+		config: {stiffness: 100},
+	});
 
-	return <CircleMarker radius={radius} {...rest} />;
+	return <CircleMarker radius={currentRadius} {...rest} />;
 };
