@@ -1,4 +1,6 @@
+import {useCurrentFrame} from 'remotion'
 import './Details.scss';
+import {Wind} from '../animations/Wind';
 
 export type DetailsProps = {
 	details: Array<{
@@ -10,8 +12,11 @@ export type DetailsProps = {
 };
 
 export const Details = ({details, score, stations}) => {
+	const frame = useCurrentFrame();
+
 	return (
 		<div className="container">
+			{frame < 27 && <Wind />}
 			<div className="detailsScoreIsExplainedBy">
 				Ce score de {score} / 6 s&apos;explique par...
 			</div>

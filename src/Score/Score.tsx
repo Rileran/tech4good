@@ -3,6 +3,8 @@ import {Rain} from '../animations/Rain';
 import {Sun} from '../animations/Sun';
 import {colors} from '../colors';
 import './Score.scss';
+import {useCurrentFrame} from 'remotion';
+import {Wind} from '../animations/Wind';
 
 export type ScoreProps = {
 	date: Dayjs;
@@ -13,6 +15,7 @@ export type ScoreProps = {
 export const Score = ({date, score, weather}) => {
 	const label = Object.keys(colors)[score - 1];
 	const color = colors[label];
+	const frame = useCurrentFrame();
 
 	let Animation = Sun;
 	if (weather === 'Rain') {
@@ -21,10 +24,9 @@ export const Score = ({date, score, weather}) => {
 
 	return (
 		<div className="container">
-			<Animation />
-			<div className="scoreDate">
-				Indice Atmo au {date.format('dddd D MMMM')}
-			</div>
+			{frame < 27 && <Wind />}
+			<Animation/>
+			<div className="scoreDate">Indice Atmo au <span>{date.format('dddd D MMMM')}</span></div>
 			<div style={{color}} className="scoreScore">
 				{score}
 				<span className="scoreOutOf6">/ 6</span>
