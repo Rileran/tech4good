@@ -76,7 +76,7 @@ export const Atmo = () => {
 				<Details details={details} score={score} />
 			</Sequence>
 			<Sequence from={351} durationInFrames={100}>
-				<Advice advice="Arrêtez la clope et la bagnole" />
+				<Advice/>
 			</Sequence>
 			<Sequence from={451} durationInFrames={50}>
 				<Aurevoir />
